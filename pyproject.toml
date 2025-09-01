@@ -1,0 +1,100 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-playlist-organizer"
+version = "1.0.0"
+description = "A smart YouTube playlist management and organization tool with AI-powered content analysis"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "YouTube Playlist Organizer Contributors"}
+]
+keywords = [
+    "youtube",
+    "playlist",
+    "organizer",
+    "management",
+    "ai",
+    "automation",
+    "google-api"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "google-api-python-client>=2.0.0",
+    "google-auth-httplib2>=0.1.0",
+    "google-auth-oauthlib>=0.5.0",
+    "google-auth>=2.0.0",
+    "urllib3>=1.26.0",
+    "colorama>=0.4.4",
+    "pandas>=1.3.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/your-username/youtube-playlist-organizer"
+"Bug Reports" = "https://github.com/your-username/youtube-playlist-organizer/issues"
+"Source" = "https://github.com/your-username/youtube-playlist-organizer"
+"Documentation" = "https://github.com/your-username/youtube-playlist-organizer#readme"
+
+[project.scripts]
+youtube-playlist-manager = "youtube_playlist_manager:main"
+playlist-organizer = "playlist_organizer:main"
+playlist-executor = "youtube_playlist_executor:main"
+
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["src"] by default)
+include = ["*.py"]  # package names should match these glob patterns (["*"] by default)
+exclude = ["tests*", "docs*"]  # exclude packages matching these glob patterns
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded by ^/ will apply only to files and directories
+# in the root of the project.
+^/setup.py
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]

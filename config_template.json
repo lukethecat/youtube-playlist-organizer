@@ -1,0 +1,26 @@
+{
+  "api_settings": {
+    "api_key": "YOUR_YOUTUBE_API_KEY_HERE",
+    "credentials_file": "credentials.json",
+    "token_file": "token.json"
+  },
+  "operation_settings": {
+    "max_results_per_request": 50,
+    "request_delay_seconds": 0.1,
+    "backup_before_operations": true,
+    "auto_create_backup": true
+  },
+  "organization_rules": {
+    "auto_delete_empty_playlists": false,
+    "max_videos_per_playlist": 100,
+    "duplicate_handling": "prompt",
+    "default_privacy_status": "private"
+  },
+  "categories": {
+    "music": ["音乐", "歌曲", "MV", "演唱会", "music", "song"],
+    "education": ["教程", "学习", "课程", "tutorial", "education", "learning"],
+    "entertainment": ["娱乐", "搞笑", "综艺", "entertainment", "funny", "comedy"],
+    "technology": ["科技", "编程", "技术", "technology", "programming", "coding"],
+    "gaming": ["游戏", "攻略", "实况", "gaming", "gameplay", "walkthrough"]
+  }
+}
